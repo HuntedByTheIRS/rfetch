@@ -186,7 +186,12 @@ fn stdout_is_terminal() -> bool {
 }
 
 /// the `colored` precedence, split out so it can be tested. `None` = unset.
-fn decide(clicolor_force: Option<&str>, no_color: Option<&str>, clicolor: Option<&str>, is_tty: bool) -> bool {
+fn decide(
+    clicolor_force: Option<&str>,
+    no_color: Option<&str>,
+    clicolor: Option<&str>,
+    is_tty: bool,
+) -> bool {
     if let Some(v) = clicolor_force {
         if v != "0" {
             return true;

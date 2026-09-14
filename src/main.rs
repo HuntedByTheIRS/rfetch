@@ -134,7 +134,11 @@ fn random() {
     match chosen {
         1 => {
             let desktop = env::var("XDG_CURRENT_DESKTOP").unwrap_or_else(|_| "rfetch".to_string());
-            println!("\"i use {} btw\" - (c) {}", desktop, internals::identity::username())
+            println!(
+                "\"i use {} btw\" - (c) {}",
+                desktop,
+                internals::identity::username()
+            )
         }
         2 => {
             if Command::new("neofetch").arg("--version").output().is_ok() {
